@@ -3,7 +3,6 @@ const Message = require('../db/models/Message.js');
 function getMessages(req, res) {
   Message.find()
     .then(messages => {
-      console.log("messages", messages);
       res.send(messages);
     })
     .catch(err => {
@@ -19,8 +18,7 @@ function addNewMessage(req, res) {
   });
   message.save()
     .then(function() {
-      console.log('done');
-      res.send(message);
+      getMessages(req, res);
     })
     .catch(err => {
       console.error('Error adding message', err);

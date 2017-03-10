@@ -10,7 +10,7 @@ class ChatList extends React.Component {
     return (
       <div>
         <strong>Messages:</strong>
-        {this.props.messages ? this.props.messages.map((message) => <Message key={message.text} message={message} />) : null}
+        {this.props.messages.length ? this.props.messages.map((message) => <Message key={Math.random() * 100000} message={message} />) : null}
       </div>
     )
   }

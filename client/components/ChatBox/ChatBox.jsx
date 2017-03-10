@@ -18,7 +18,7 @@ class ChatBox extends React.Component {
   }
 
   submitMessage() {
-    this.props.submitMessage({ username: 'zak', text: this.state.message});
+    this.props.submitMessage(this.state.message);
   }
 
   render() {
